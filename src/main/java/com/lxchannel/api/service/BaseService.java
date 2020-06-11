@@ -7,6 +7,8 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
@@ -15,6 +17,9 @@ import java.io.IOException;
  * Created by Niki on 2019/5/14 10:26
  */
 public class BaseService {
+
+    private static Logger logger = LoggerFactory.getLogger(BaseService.class);
+
 
     /**
      * 发送GET请求
@@ -40,15 +45,19 @@ public class BaseService {
      * @throws IOException
      */
     public static JSONObject post(String url, JSONObject json) throws IOException {
+        long start = System.currentTimeMillis();
         HttpClient client = HttpClientUtil.client();
+        HttpPost httpPost = HttpClientUtil.post(url, json.toJSONString());
+        JSONObject jsonObject = null;
         try {
-
-            HttpPost httpPost = HttpClientUtil.post(url, json.toJSONString());
             HttpResponse response = client.execute(httpPost);
-            return HttpClientUtil.res2Json(response);
+            jsonObject = HttpClientUtil.res2Json(response);
         } finally {
+            logger.info("request:{},params:{},resp:{},cost:{}", url, json.toJSONString(),
+                    jsonObject == null ? "null" : jsonObject.toJSONString(), System.currentTimeMillis() - start);
             ((CloseableHttpClient) client).close();
         }
+        return jsonObject;
     }
 
 

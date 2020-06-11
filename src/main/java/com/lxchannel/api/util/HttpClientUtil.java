@@ -11,15 +11,10 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import sun.misc.BASE64Encoder;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * @Author: dogyu
@@ -27,6 +22,7 @@ import java.security.NoSuchAlgorithmException;
  * @Description:
  */
 public class HttpClientUtil {
+
     private HttpClientUtil() {
 
     }
