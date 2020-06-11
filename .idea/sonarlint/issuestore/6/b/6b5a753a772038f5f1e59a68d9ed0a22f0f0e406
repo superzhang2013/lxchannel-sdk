@@ -1,0 +1,8 @@
+
+Xsquid:S2589"7Remove this expression which always evaluates to "true"(äà¾Ìùÿÿÿÿ8ãÝ÷¡«-
+Psquid:S1066"/Merge this if statement with the enclosing one.(©ÐýŠþÿÿÿÿ8ãÝ÷¡«-
+qsquid:UselessImportCheck"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾þÿÿÿÿ8÷ò÷¡«-
+asquid:UselessImportCheck"8Remove this unused import 'java.security.MessageDigest'.(Œð²»8÷ò÷¡«-
+Qsquid:S1191"5Use classes from the Java API instead of Sun classes.(ëÞï®8ãÝ÷¡«-
+jsquid:UselessImportCheck"ARemove this unused import 'java.io.UnsupportedEncodingException'.(Ãµ…“8÷ò÷¡«-
+\squid:UselessImportCheck"3Remove this unused import 'sun.misc.BASE64Encoder'.(ëÞï®8÷ò÷¡«-
