@@ -80,4 +80,9 @@ public class LxchannelConstants {
      */
     public final static String ORDER_UNIFY = "https://open.api.fenqile.com/route0007/pop/order/unify.json";
 
+    /**
+     * 下载对账单
+     */
+    public final static String ORDER_DOWNLOAD_URL = "https://open.api.fenqile.com/route0007/pop/bill/query.json";
+
 }
